@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".menuContent"
+    android:background="@color/darker_grey">
+
+    <Button
+        android:id="@+id/btnDeportes"
+        android:layout_width="378dp"
+        android:layout_height="122dp"
+        android:background="@drawable/rainbowcolor4"
+        android:drawableTop="@drawable/trophy"
+        android:drawablePadding="100dp"
+        android:onClick="aDeportes"
+        android:paddingTop="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.205"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnDeportes4"
+        android:layout_width="378dp"
+        android:layout_height="122dp"
+        android:background="@drawable/rainbowcolor4"
+        android:drawableTop="@drawable/heart"
+        android:drawablePadding="100dp"
+        android:paddingTop="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.845"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnDeportes3"
+        android:layout_width="378dp"
+        android:layout_height="122dp"
+        android:background="@drawable/rainbowcolor3"
+        android:drawableTop="@drawable/car"
+        android:drawablePadding="100dp"
+        android:paddingTop="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.632"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnDeportes2"
+        android:layout_width="378dp"
+        android:layout_height="122dp"
+        android:background="@drawable/rainbowcolor2"
+        android:drawableTop="@drawable/books"
+        android:drawablePadding="100dp"
+        android:paddingTop="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.418"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="380dp"
+        android:layout_height="72dp"
+        android:fontFamily="@font/cairo"
+        android:text="Elige la categoria que mas se acerque a lo que te gusta"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.08" />
+
+    <Button
+        android:id="@+id/btnPerfil"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:alpha="0.8"
+        android:background="@drawable/custom_button"
+        android:drawableTop="@drawable/ic_baseline_account_circle_24"
+        android:drawablePadding="100dp"
+        android:fontFamily="@font/cairo"
+        android:onClick="aPerfil"
+        android:paddingTop="10dp"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
