@@ -10,8 +10,7 @@
         android:layout_margin="10dp"
         app:cardElevation="4dp"
         android:id="@+id/cardView"
-        app:cardCornerRadius="10dp"
-        >
+        app:cardCornerRadius="10dp">
 
         <FrameLayout
             android:layout_width="match_parent"

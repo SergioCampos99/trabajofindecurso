@@ -24,6 +24,7 @@ public class sportsnews extends AppCompatActivity {
     Adapter adapter;
     Intent intencion;
     RecyclerView recyclerView;
+    public static String source = "bbc-news";
     public static String API_KEY = "cdecf0c6a277499f81c7edf0bb044914";
 
     List<Articles> articles = new ArrayList<>();
@@ -35,21 +36,23 @@ public class sportsnews extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView1);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        String country = getCountry();
-        retrieveJson(country, API_KEY);
+
+        adapter = new Adapter(sportsnews.this,articles);
+        recyclerView.setAdapter(adapter);
+        retrieveJson(source, API_KEY);
+
     }
 
-    public void retrieveJson(String country, String apiKey){
+    public void retrieveJson(String source, String apiKey){
 
-        Call<Headlines> call = ApiClient.getInstance().getApi().getHeadlines(country, apiKey);
+        Call<Headlines> call = ApiClient.getInstance().getApi().getHeadlines(source, apiKey);
         call.enqueue(new Callback<Headlines>() {
             @Override
             public void onResponse(Call<Headlines> call, Response<Headlines> response) {
                 if(response.isSuccessful() && response.body().getArticles() != null){
                     articles.clear();
                     articles = response.body().getArticles();
-                    adapter = new Adapter(sportsnews.this,articles);
-                    recyclerView.setAdapter(adapter);
+                    adapter.setArticles(articles);
                 }
             }
 

@@ -69,4 +69,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
         }
     }
+
+    public void setArticles(List<Articles> articles) {
+        this.articles.addAll(articles);
+        int count = getItemCount();
+        notifyItemRangeInserted(count, count + articles.size());
+    }
+
+
 }
