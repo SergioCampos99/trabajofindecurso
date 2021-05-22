@@ -2,8 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.newsapp4">
 
-
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,10 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".sportsnews" android:screenOrientation="locked"/>
-        <activity android:name=".profile_activity" android:screenOrientation="locked"/>
-        <activity android:name=".menuContent" android:screenOrientation="locked"/>
-        <activity android:name=".MainActivity" android:screenOrientation="locked">
+        <activity android:name=".LoginActivity"></activity>
+        <activity
+            android:name=".sportsnews"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".profile_activity"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".menuContent"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="locked">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

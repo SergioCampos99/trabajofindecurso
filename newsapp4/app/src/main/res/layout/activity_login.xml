@@ -8,7 +8,6 @@
     tools:context=".MainActivity">
 
 
-
     <VideoView
         android:id="@+id/vvBack"
         android:layout_width="match_parent"
@@ -18,12 +17,11 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
+        app:layout_constraintVertical_bias="1.0"/>
 
     <Button
-        android:id="@+id/btn_registro"
-        android:layout_width="165dp"
+        android:id="@+id/btn_registro2"
+        android:layout_width="250dp"
         android:layout_height="60dp"
         android:alpha="0.8"
         android:background="@drawable/custom_button"
@@ -34,13 +32,13 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.121"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.67" />
+        app:layout_constraintVertical_bias="0.935" />
 
     <Button
-        android:id="@+id/btn_inicioSesion"
+        android:id="@+id/btn_inicioSesion2"
         android:layout_width="250dp"
         android:layout_height="60dp"
         android:alpha="0.8"
@@ -55,14 +53,14 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.947" />
+        app:layout_constraintVertical_bias="0.593" />
 
     <TextView
         android:id="@+id/tvAdvertencia"
         android:layout_width="386dp"
         android:layout_height="66dp"
         android:fontFamily="@font/g_light"
-        android:text="¿Tienes cuenta en Dingo? Inicia Sesion para disfrutar de las ultimas noticias"
+        android:text="¿Aún no tienes cuenta?, registrate ya en Dingo gratuitamente."
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#FFFFFF"
@@ -71,22 +69,10 @@
         app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="@+id/vvBack"
         app:layout_constraintTop_toTopOf="@+id/vvBack"
-        app:layout_constraintVertical_bias="0.83" />
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:cardElevation="4dp"
-        app:layout_constraintBottom_toBottomOf="@+id/vvBack"
-        app:layout_constraintTop_toTopOf="parent">
-
-
-    </androidx.cardview.widget.CardView>
-
+        app:layout_constraintVertical_bias="0.809" />
 
     <EditText
-        android:id="@+id/etPass"
+        android:id="@+id/etPass2"
         android:layout_width="301dp"
         android:layout_height="57dp"
         android:alpha="0.9"
@@ -107,28 +93,7 @@
         app:layout_constraintVertical_bias="0.397" />
 
     <EditText
-        android:id="@+id/etUsername"
-        android:layout_width="301dp"
-        android:layout_height="57dp"
-        android:alpha="0.9"
-        android:background="@drawable/white_button"
-        android:drawableStart="@drawable/ic_baseline_group_24"
-        android:drawablePadding="12dp"
-        android:ems="10"
-        android:fontFamily="@font/g_light"
-        android:hint="Usuario"
-        android:inputType="textEmailAddress"
-        android:paddingStart="20dp"
-        android:textColor="#000000"
-        android:textColorHint="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/vvBack"
-        app:layout_constraintTop_toTopOf="@+id/vvBack"
-        app:layout_constraintVertical_bias="0.293" />
-
-    <EditText
-        android:id="@+id/etEmail"
+        android:id="@+id/etEmail2"
         android:layout_width="301dp"
         android:layout_height="57dp"
         android:alpha="0.9"
@@ -147,32 +112,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/vvBack"
-        app:layout_constraintVertical_bias="0.192" />
-
-    <TextView
-        android:id="@+id/tvRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/g_bold"
-        android:textColor="@color/white"
-        android:textSize="17dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/vvBack"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.049" />
-
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/googleSignInBtn"
-        android:layout_width="151dp"
-        android:layout_height="60dp"
-        android:alpha="0.8"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.861"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.67" />
+        app:layout_constraintVertical_bias="0.292" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

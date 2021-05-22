@@ -4,66 +4,134 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/darker_grey">
+    android:background="@color/grey"
     tools:context=".profile_activity">
+
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/lyProfile"
         android:layout_width="411dp"
-        android:layout_height="231dp"
+        android:layout_height="280dp"
+        android:background="@color/grey"
+        android:elevation="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/black_background"
         app:layout_constraintVertical_bias="0.0">
 
-        <ImageView
-            android:id="@+id/ivProfile"
-            android:layout_width="127dp"
-            android:layout_height="126dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="100dp"
+            app:cardElevation="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/tvUsername"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.141"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.446"
-            tools:srcCompat="@drawable/iconopnggoogle" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivProfile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+        </androidx.cardview.widget.CardView>
+
 
         <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="289dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="36dp"
+            android:fontFamily="@font/g_light"
+            android:text="Email"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.29"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.816" />
+
+        <TextView
+            android:id="@+id/tvMiembroNum"
+            android:layout_width="127dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="36dp"
+            android:fontFamily="@font/g_light"
+            android:text="Miembro numero: "
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.984" />
+
+        <TextView
+            android:id="@+id/tvMiembro"
+            android:layout_width="175dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="36dp"
+            android:fontFamily="@font/g_light"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.769"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.984" />
+
+        <TextView
+            android:textSize="17dp"
             android:id="@+id/tvUsername"
             android:layout_width="178dp"
             android:layout_height="26dp"
             android:layout_marginStart="36dp"
-            android:layout_marginTop="44dp"
-            android:fontFamily="@font/cairo"
+            android:layout_marginTop="156dp"
+            android:fontFamily="@font/g_bold"
             android:text="Usuario"
+            android:textAlignment="center"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/tvEmail"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/ivProfile"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintHorizontal_bias="0.406"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textColor="@color/black"/>
 
-        <TextView
-            android:id="@+id/tvEmail"
-            android:layout_width="176dp"
-            android:layout_height="49dp"
-            android:layout_marginStart="36dp"
-            android:fontFamily="@font/cairo"
-            android:text="Email"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/ivProfile"
-            app:layout_constraintTop_toBottomOf="@+id/tvUsername"
-            app:layout_constraintVertical_bias="0.081" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btnSignOut"
+        android:layout_width="130dp"
+        android:layout_height="55dp"
+        android:alpha="0.8"
+        android:background="@drawable/custom_button"
+        android:fontFamily="@font/cairo"
+        android:onClick="atras"
+        android:text="SIGN OUT"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.943"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.949" />
 
     <Button
         android:id="@+id/btnAtras"
         android:layout_width="231dp"
         android:layout_height="55dp"
+        android:layout_marginStart="16dp"
         android:alpha="0.8"
         android:background="@drawable/custom_button"
         android:fontFamily="@font/cairo"
@@ -72,9 +140,10 @@
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintEnd_toStartOf="@+id/btnSignOut"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/lyProfile"
-        app:layout_constraintVertical_bias="0.922" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.949" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
