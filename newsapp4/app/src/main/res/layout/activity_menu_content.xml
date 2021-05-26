@@ -25,13 +25,14 @@
 
 
     <Button
-        android:id="@+id/btnDeportes4"
+        android:id="@+id/btnBarrio"
         android:layout_width="378dp"
         android:layout_height="122dp"
         android:background="@drawable/rainbowcolor4"
         android:drawableTop="@drawable/zgz"
         android:drawablePadding="100dp"
         android:paddingTop="37dp"
+        android:elevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.484"
@@ -40,7 +41,7 @@
         app:layout_constraintVertical_bias="0.729" />
 
     <Button
-        android:id="@+id/btnDeportes"
+        android:id="@+id/btnBbc"
         android:layout_width="378dp"
         android:layout_height="122dp"
         android:background="@drawable/rainbowcolor4"
@@ -57,13 +58,14 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/btnDeportes2"
+        android:id="@+id/btnTesla"
         android:layout_width="378dp"
         android:layout_height="122dp"
         android:background="@drawable/rainbowcolor2"
-        android:drawableTop="@drawable/tesla"
+        android:drawableTop="@drawable/tc"
         android:drawablePadding="100dp"
         android:paddingTop="28dp"
+        android:onClick="aBusiness"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.484"
@@ -73,12 +75,14 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/btnDeportes3"
+        android:id="@+id/btnWsj"
         android:layout_width="378dp"
         android:layout_height="122dp"
         android:background="@drawable/rainbowcolor3"
-        android:drawableTop="@drawable/wsj_new"
+        android:drawableTop="@drawable/apple"
         android:drawablePadding="100dp"
+        android:paddingTop="8dp"
+        android:onClick="aApple"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.484"
@@ -91,7 +95,6 @@
         android:id="@+id/btnPerfil"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginTop="652dp"
         android:alpha="0.8"
         android:background="@drawable/custom_button"
         android:drawableTop="@drawable/ic_baseline_account_circle_24"
@@ -101,9 +104,11 @@
         android:onClick="aPerfil"
         android:paddingTop="10dp"
         android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.975" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

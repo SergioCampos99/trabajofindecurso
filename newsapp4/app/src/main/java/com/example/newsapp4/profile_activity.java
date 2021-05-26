@@ -86,7 +86,7 @@ public class profile_activity extends AppCompatActivity {
     }
 
     //En este metodo, llamaremos al almacenamiento de nuestro telefono para poder asi
-    //
+    //obtener las fotografias que tengamos y añadir una como foto de perfil.
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
@@ -113,7 +113,7 @@ public class profile_activity extends AppCompatActivity {
 
     }
 
-    //Añadiendo una foto de la galeria para la foto de perfil
+
 
 
     public void atras(View vista){

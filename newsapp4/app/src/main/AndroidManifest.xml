@@ -11,9 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".AppleNews"></activity>
+        <activity android:name=".techcrunchnews" />
+        <activity android:name=".crudPost" />
+        <activity android:name=".postsBarrio" />
+        <activity android:name=".LoginActivity" />
         <activity
-            android:name=".sportsnews"
+            android:name=".bbcnews"
             android:screenOrientation="locked" />
         <activity
             android:name=".profile_activity"

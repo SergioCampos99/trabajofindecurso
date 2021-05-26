@@ -211,6 +211,9 @@ public class MainActivity extends AppCompatActivity {
         return connection;
 
     }
+
+
+
     //Metodos para que el video en el fondo funcione.
     protected void onResume(){
         videoBack.resume();
