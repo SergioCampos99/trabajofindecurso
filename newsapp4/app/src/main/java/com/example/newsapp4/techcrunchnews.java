@@ -3,6 +3,7 @@ package com.example.newsapp4;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -27,6 +28,7 @@ public class techcrunchnews extends AppCompatActivity {
     //public static String category = "business";
     public static String sources = "techcrunch";
     public static String API_KEY = "cdecf0c6a277499f81c7edf0bb044914";
+    SwipeRefreshLayout srl;
 
     List<Articles> articles = new ArrayList<>();
 
@@ -34,6 +36,15 @@ public class techcrunchnews extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_techcrunchnews);
+
+        srl = findViewById(R.id.swipeRefresh2);
+        srl.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                retrieveJson(sources, API_KEY);
+            }
+        });
+
 
         recyclerView = findViewById(R.id.recyclerView1);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -47,11 +58,13 @@ public class techcrunchnews extends AppCompatActivity {
 
     public void retrieveJson(String sources, String apiKey){
 
+        srl.setRefreshing(true);
         Call<Headlines> call = ApiClientB.getInstance().getApi().getHeadlines(sources, apiKey);
         call.enqueue(new Callback<Headlines>() {
             @Override
             public void onResponse(Call<Headlines> call, Response<Headlines> response) {
                 if(response.isSuccessful() && response.body().getArticles() != null){
+                    srl.setRefreshing(false);
                     articles.clear();
                     articles = response.body().getArticles();
                     adapterB.setArticlesB(articles);
@@ -61,6 +74,7 @@ public class techcrunchnews extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Headlines> call, Throwable t) {
+                srl.setRefreshing(false);
                 Toast.makeText(techcrunchnews.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
         });

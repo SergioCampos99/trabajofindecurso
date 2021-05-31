@@ -28,46 +28,18 @@ public class postsBarrio extends AppCompatActivity {
 
         postList = (ListView) findViewById(R.id.lvPost);
 
-        crudPost crud = new crudPost();
+        btnpost = (Button) findViewById(R.id.btnAPost);
 
-        /*try{
-
-            Statement stmt = crudPost.makePost().execute("");
-            ResultSet rs = stmt.executeQuery("select * from posts");
-            Titles.clear();
-            final ArrayList<postmodel> pm = new ArrayList<postmodel>();
-            while(rs.next()){
-                postmodel obj = new postmodel();
-                obj.title = rs.getString("postTitle");
-                obj.description = rs.getString("postDesc");
-                pm.add(obj);
-
-                Titles.add("Title: " + obj.title + "\n Description: " + obj.description);
-            }
-            arrayAdapter = new ArrayAdapter(this,R.layout.support_simple_spinner_dropdown_item, Titles);
-            postList.invalidateViews();
-
-
-
-
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-*/
-        btnpost = findViewById(R.id.btnAPost);
         btnpost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intencion = new Intent(postsBarrio.this, crudPost.class);
+                Intent intencion  = new Intent(postsBarrio.this, CrudPost.class);
                 startActivity(intencion);
             }
         });
-
     }
+
+
 
 
 }

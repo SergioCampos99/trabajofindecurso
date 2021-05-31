@@ -3,6 +3,7 @@ package com.example.newsapp4;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,13 +31,25 @@ public class AppleNews extends AppCompatActivity {
     public static String to = "2021-05-25";
     public static String sortBy = "popularity";
     public static String API_KEY = "cdecf0c6a277499f81c7edf0bb044914";
+    SwipeRefreshLayout srl;
 
     List<Articles> articles = new ArrayList<>();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_applenews);
+
+        srl = findViewById(R.id.swipeRefresh1);
+        srl.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                retrieveJson(q, from, to, sortBy, API_KEY);
+            }
+        });
+
 
         recyclerView = findViewById(R.id.recyclerView1);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -49,12 +62,13 @@ public class AppleNews extends AppCompatActivity {
     }
 
     public void retrieveJson(String q, String from, String to, String sortBy, String apiKey){
-
+        srl.setRefreshing(true);
         Call<Headlines> call = ApiClientC.getInstance().getApi().getHeadlines(q, from, to, sortBy, apiKey);
         call.enqueue(new Callback<Headlines>() {
             @Override
             public void onResponse(Call<Headlines> call, Response<Headlines> response) {
                 if(response.isSuccessful() && response.body().getArticles() != null){
+                    srl.setRefreshing(false);
                     articles.clear();
                     articles = response.body().getArticles();
                     adapterC.setArticlesC(articles);
@@ -64,6 +78,7 @@ public class AppleNews extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Headlines> call, Throwable t) {
+                srl.setRefreshing(false);
                 Toast.makeText(AppleNews.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
         });

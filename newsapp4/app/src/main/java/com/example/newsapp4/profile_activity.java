@@ -7,7 +7,9 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -15,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.newsapp4.Connection.ConnectionClass;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -23,6 +26,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 public class profile_activity extends AppCompatActivity {
 
@@ -32,6 +37,8 @@ public class profile_activity extends AppCompatActivity {
     ImageView ivProfile;
     private static final int PICK_IMAGE = 1;
     Uri imageUri;
+    /*Connection con;
+    String connectionResult = "";*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +92,19 @@ public class profile_activity extends AppCompatActivity {
         });
     }
 
+   /* public void getDataFromDatabase(View v){
+        try{
+            ConnectionClass connectionHelper = new ConnectionClass();
+            con = connectionClass(ConnectionClass.ip.toString(), ConnectionClass.port.toString(),ConnectionClass.db.toString(),ConnectionClass.un.toString(),ConnectionClass.pass.toString());
+            if(con != null){
+                String query = "SELECT * FROM users";
+            }
+
+        }catch (Exception e){
+            Log.e("Error" + e.getMessage());
+        }
+    }*/
+
     //En este metodo, llamaremos al almacenamiento de nuestro telefono para poder asi
     //obtener las fotografias que tengamos y añadir una como foto de perfil.
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -112,6 +132,26 @@ public class profile_activity extends AppCompatActivity {
         });
 
     }
+
+    /*public Connection connectionClass(String server, String port, String database, String username, String pass){
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+        Connection connection = null;
+        String connectionURL = null;
+        try{
+            //Obtencion del driver jtds para la conexion con la base de datos
+            Class.forName("net.sourceforge.jtds.jdbc.Driver");
+            connectionURL= "jdbc:jtds:sqlserver://"+ server + ":" +port+ ";"+ "databaseName="+ database +";user="+username+";password="+pass+";";
+            connection = DriverManager.getConnection(connectionURL);
+            System.out.println(connectionURL);
+        }catch (Exception e){
+            Log.e("SQL Connection Error : ", e.getMessage());
+            System.out.println(connectionURL);
+        }
+
+        return connection;
+
+    }*/
 
 
 
